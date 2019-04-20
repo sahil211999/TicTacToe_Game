@@ -2,6 +2,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    first_player_Name = ofSystemTextBoxDialog("Enter the name of the first player", "sahil");
+    second_player_name = ofSystemTextBoxDialog("Enter the name of the first player", "sahil");
+    
 
 }
 
@@ -12,11 +15,14 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    start_game.set(90, 90, BUTTON_LENGTH, BUTTON_LENGTH);
+    
 
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    
 
 }
 
@@ -68,4 +74,10 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+
+//------------------------------------------------------
+void ofApp::setUpinitialScreen() {
+    
 }

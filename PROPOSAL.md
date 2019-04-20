@@ -1,4 +1,3 @@
-
 # Project proposal
 
 ## Brief:
