@@ -46,6 +46,6 @@ class board {
     
     
 };
-//std::vector <grid()> board;
+
 
 #endif /* board__hpp */

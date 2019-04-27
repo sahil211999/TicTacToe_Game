@@ -93,6 +93,13 @@ public:
     //image for the grid.
         ofImage grid;
     
+    //image for the X.
+        ofImage image_for_x;
+    
+    //image for the O.
+        ofImage image_for_y;
+    
+    
     
         ofRectangle first_bar;
         int width = 5;

@@ -23,7 +23,7 @@ void ofApp::setup(){
     
     intro_sequence.setVolume(0.5);
     
-    //intro_sequence.play();
+    intro_sequence.play();
    
 
     
@@ -41,41 +41,32 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    
-    //ofColor(0,0,0);
-    ofDrawBitmapString( ofGetMouseX(), 50, 50);
-    ofDrawBitmapString ( ofGetMouseY(), 50, 40);
-    
-    
-    //ofBackground(255, 255, 255);
-    grid.draw(200, 100);
-    
-//    ofSetColor(130, 100, 70);
-//    ofDrawRectRounded(start_game, 200);
-//
-//    ofSetColor(255, 255, 255);
-//    start_game_f.drawString("START GAME", 450, 450);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//    ofPushMatrix();
-//
-//    ofSetColor(158, 253, 159);
-//    string scaleA = "TIC TAC TOE";
-//    ofRectangle bounds = start_game_f.getStringBoundingBox(scaleA, 40, 40);
-//
-//    ofTranslate(400 + bounds.width/2, 300 + bounds.height / 2, 0);
-//    ofScale(2.0 + cos(ofGetElapsedTimef()), 2.0 + cos(ofGetElapsedTimef()), 1.0);
-//
-//    start_game_f.drawString(scaleA, -bounds.width/2, bounds.height/2 );
-//    ofPopMatrix();
-//
+    ofSetColor(130, 100, 70);
+    ofDrawRectRounded(start_game, 200);
+
+    ofSetColor(255, 255, 255);
+    start_game_f.drawString("START GAME", 450, 450);
+
+
+
+
+
+
+
+
+
+    ofPushMatrix();
+
+    ofSetColor(158, 253, 159);
+    string scaleA = "TIC TAC TOE";
+    ofRectangle bounds = start_game_f.getStringBoundingBox(scaleA, 40, 40);
+
+    ofTranslate(400 + bounds.width/2, 300 + bounds.height / 2, 0);
+    ofScale(2.0 + cos(ofGetElapsedTimef()), 2.0 + cos(ofGetElapsedTimef()), 1.0);
+
+    start_game_f.drawString(scaleA, -bounds.width/2, bounds.height/2 );
+    ofPopMatrix();
+
     
 }
 
@@ -138,6 +129,25 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 //------------------------------------------------------
 void ofApp::setUpinitialScreen() {
+    ofSetColor(130, 100, 70);
+    ofDrawRectRounded(start_game, 200);
+    
+    ofSetColor(255, 255, 255);
+    start_game_f.drawString("START GAME", 450, 450);
+    
+    ofPushMatrix();
+    
+    ofSetColor(158, 253, 159);
+    string scaleA = "TIC TAC TOE";
+    ofRectangle bounds = start_game_f.getStringBoundingBox(scaleA, 40, 40);
+    
+    ofTranslate(400 + bounds.width/2, 300 + bounds.height / 2, 0);
+    ofScale(2.0 + cos(ofGetElapsedTimef()), 2.0 + cos(ofGetElapsedTimef()), 1.0);
+    
+    start_game_f.drawString(scaleA, -bounds.width/2, bounds.height/2 );
+    ofPopMatrix();
+    
+
     
     
 }

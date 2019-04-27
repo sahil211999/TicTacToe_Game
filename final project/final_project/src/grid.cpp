@@ -23,11 +23,6 @@ void grid::updateGrid(int c) {
     value = c;
 }
 
-
-
-
-
-
 bool grid::checkIfInsideGrid(int x, int y) {
     if (x > upper_x_bound & x < lower_x_bound) {
         return false;
