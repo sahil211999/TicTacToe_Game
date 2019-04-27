@@ -6,3 +6,7 @@
 //
 
 #include "player_.hpp"
+
+Player::Player() {
+    
+}

@@ -27,13 +27,19 @@ class board {
     //method to draw the grids on the board
     void drawGrids();
     
-    //board height and width
-    
-    //constant board width
+   //constant board width
     float kBOARD_WIDTH = 610;
     
     //constant board height
     float kBOARD_HEIGHT = 248;
+    
+    //constant for the co-ordinate system on the board
+    float kBOARD_ZERO_x = 220;
+    
+    //constant for the co-ordinate system on the board
+    float kBOARD_ZERO_Y = 220;
+    
+    
     
     
     

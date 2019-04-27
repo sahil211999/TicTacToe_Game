@@ -11,10 +11,6 @@ board::board() {
     std::vector<std::vector<grid>> temp(3, std::vector<grid> (3));
     
     something = temp;
-    
-    
-    
-    
 }
 
 
@@ -32,12 +28,10 @@ void board::drawGrids() {
 void board::setUpBounds() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            
-            if (j == 0)
-            something[i][j].upper_x_bound = ;
-            something[i][j].upper_y_bound = ;
-            something[i][j].lower_x_bound = ;
-            something[i][j].lower_y_bound = ;
+            something[i][j].upper_x_bound = kBOARD_ZERO_x + (something[i][j].width * (j + 1));
+            something[i][j].upper_y_bound = kBOARD_ZERO_Y + (something[i][j].height * (i + 1));
+            something[i][j].lower_x_bound = kBOARD_ZERO_x + (something[i][j].width * j);
+            something[i][j].lower_y_bound = kBOARD_ZERO_Y + (something[i][j].height * j);
         }
     }
 }

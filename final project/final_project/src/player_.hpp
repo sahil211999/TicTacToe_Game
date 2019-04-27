@@ -12,6 +12,8 @@
 
 class Player {
     
+    Player();
+    
     public:
             int serial;
             int chances_played;

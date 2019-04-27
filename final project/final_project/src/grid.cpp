@@ -19,6 +19,14 @@ grid::grid(float x, float y) {
     value = VAL_EMPTY;
 }
 
+void grid::updateGrid(int c) {
+    value = c;
+}
+
+
+
+
+
 
 bool grid::checkIfInsideGrid(int x, int y) {
     if (x > upper_x_bound & x < lower_x_bound) {
@@ -32,15 +40,4 @@ bool grid::checkIfInsideGrid(int x, int y) {
 }
 
 
-
-
-
-void grid::updateGrid(int c) {
-    this->value = c;
-}
-
-void grid::drawGrid() {
-    
-    
-}
 
