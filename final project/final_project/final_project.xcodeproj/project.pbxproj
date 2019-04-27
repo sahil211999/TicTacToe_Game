@@ -10,6 +10,7 @@
 		092E698A82F01FAC95061F4E /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D81B1B67EC9F16D9076 /* ofxPanel.cpp */; };
 		31DE74F56E43E38EFD0920A7 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 956886141D9F5ADBB355566F /* ofxButton.cpp */; };
 		405D1E2E2B42937CB951DCA0 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AF7C4F113871A520FBE388A /* ofxBaseGui.cpp */; };
+		5B4D8996227478F20080D32E /* board_.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D8994227478F20080D32E /* board_.cpp */; };
 		5BEDDAC62269A32900C9D00B /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDDAC42269A32900C9D00B /* grid.cpp */; };
 		5BEDDAC8226A807000C9D00B /* compute_the_winner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDDAC7226A807000C9D00B /* compute_the_winner.cpp */; };
 		5BEDDACB226B9A0200C9D00B /* player_.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDDAC9226B9A0200C9D00B /* player_.cpp */; };
@@ -45,6 +46,8 @@
 		44F2CAC9824E2BBDB9137679 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxLabel.cpp; path = "../../../../Downloads/of_v0.10.1_osx_release 2/addons/ofxGui/src/ofxLabel.cpp"; sourceTree = SOURCE_ROOT; };
 		4EC58ECE797629580CB8A44D /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxToggle.h; path = "../../../../Downloads/of_v0.10.1_osx_release 2/addons/ofxGui/src/ofxToggle.h"; sourceTree = SOURCE_ROOT; };
 		5A419EEC013B624192F41F51 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxButton.h; path = "../../../../Downloads/of_v0.10.1_osx_release 2/addons/ofxGui/src/ofxButton.h"; sourceTree = SOURCE_ROOT; };
+		5B4D8994227478F20080D32E /* board_.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board_.cpp; sourceTree = "<group>"; };
+		5B4D8995227478F20080D32E /* board_.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board_.hpp; sourceTree = "<group>"; };
 		5BEDDAC42269A32900C9D00B /* grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cpp; sourceTree = "<group>"; };
 		5BEDDAC52269A32900C9D00B /* grid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = grid.hpp; sourceTree = "<group>"; };
 		5BEDDAC7226A807000C9D00B /* compute_the_winner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = compute_the_winner.cpp; sourceTree = "<group>"; };
@@ -614,6 +617,8 @@
 				5BEDDAC7226A807000C9D00B /* compute_the_winner.cpp */,
 				5BEDDAC9226B9A0200C9D00B /* player_.cpp */,
 				5BEDDACA226B9A0200C9D00B /* player_.hpp */,
+				5B4D8994227478F20080D32E /* board_.cpp */,
+				5B4D8995227478F20080D32E /* board_.hpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -718,6 +723,7 @@
 			files = (
 				5BEDDAC8226A807000C9D00B /* compute_the_winner.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				5B4D8996227478F20080D32E /* board_.cpp in Sources */,
 				5BEDDAC62269A32900C9D00B /* grid.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				405D1E2E2B42937CB951DCA0 /* ofxBaseGui.cpp in Sources */,

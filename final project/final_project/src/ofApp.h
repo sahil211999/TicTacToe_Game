@@ -1,9 +1,9 @@
 #pragma once
 
 
-//#inlcude "grid.hpp"
 #include "ofMain.h"
-
+#include <vector>
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp {
     
@@ -17,10 +17,15 @@ private:
         HOLD_GAME,
     };
     
+    //vector to store the values from the grid
+    //vector<grid> tic_tac_toe_grid();
+    
+    
     //buttons for entry screen
     ofRectangle start_game;
     float BUTTON_WIDTH = 10;
     float BUTTON_LENGTH = 20;
+    bool start_pressed;
     
     
     
@@ -28,14 +33,10 @@ private:
     
     //taking input from the user for names of the players
     std::string first_player_Name;
-    
-    
-    
     std::string second_player_name;
     
     
     //SOUND files
-    std::string kIntroMusicPath_ = "";
     std::string ksound_played_when_player_plays = "/Users/sahil_21/Desktop/battle_theme.mp3";
     std::string kwinning_music = "/Users/sahil_21/Desktop/battle_winner.mp3";
     std::string kmusic_when_draw = "/Users/sahil_21/Desktop/In_game_theme.mp3";
@@ -43,7 +44,7 @@ private:
     
     
    
-    
+    std::string ktext_for_start = "Start Game";
     
 
     
@@ -66,8 +67,38 @@ public:
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-        
     
+    //method to set up the initial screen with the start button.
+        void setUpInitialScreen();
+    
+    //method  to set up the game.
+        void setUpGame();
+    
+    //method to take the name of the players from the user.
+        void takeUserInput();
+    
+    //method to draw the game screen.
+        void drawGameScreen();
+    
+        
+    //font for intro screen.
+        ofTrueTypeFont game_font;
+    
+    //music  to be played in background on intro screen.
+        ofSoundPlayer intro_sequence;
+    
+    //ofxButton startButton;
+        ofTrueTypeFont start_game_f;
+    
+    //image for the grid.
+        ofImage grid;
+    
+    
+        ofRectangle first_bar;
+        int width = 5;
+        int length = 20;
+    
+        
     
     
     

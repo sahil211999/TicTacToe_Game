@@ -2,22 +2,81 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    first_player_Name = ofSystemTextBoxDialog("Enter the name of the first player", "sahil");
-    second_player_name = ofSystemTextBoxDialog("Enter the name of the first player", "sahil");
+    
+    
+    grid.load("/Users/sahil_21/Documents/final-project-sahil211999/final project/final_project/bin/data/image_for_tic_tac.png");
+    
+    first_player_Name = ofSystemTextBoxDialog("Enter the name of the first player", "  ");
+    second_player_name = ofSystemTextBoxDialog("Enter the name of the second player", "  ");
+    
+    game_font.load("/Users/sahil_21/Documents/final-project-sahil211999/final project/final_project/bin/data/tetri.ttf", 30);
+  
+    
+    
+    start_game_f.load("/Users/sahil_21/Documents/final-project-sahil211999/final project/final_project/bin/data/tetri.ttf", 15);
+    
+    start_game.set(400, 400, 200, 100);
+    
+    grid.load("/Users/sahil_21/Desktop/image_for_tic_tac.png");
+    
+    intro_sequence.load("/Users/sahil_21/Documents/final-project-sahil211999/final project/final_project/bin/data/Zombie_Nation_Kernkraft_400-[AudioTrimmer.com].mp3");
+    
+    intro_sequence.setVolume(0.5);
+    
+    //intro_sequence.play();
+   
+
+    
+    
     
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    start_game.set(90, 90, BUTTON_LENGTH, BUTTON_LENGTH);
     
-
+    
+    //ofColor(0,0,0);
+    ofDrawBitmapString( ofGetMouseX(), 50, 50);
+    ofDrawBitmapString ( ofGetMouseY(), 50, 40);
+    
+    
+    //ofBackground(255, 255, 255);
+    grid.draw(200, 100);
+    
+//    ofSetColor(130, 100, 70);
+//    ofDrawRectRounded(start_game, 200);
+//
+//    ofSetColor(255, 255, 255);
+//    start_game_f.drawString("START GAME", 450, 450);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    ofPushMatrix();
+//
+//    ofSetColor(158, 253, 159);
+//    string scaleA = "TIC TAC TOE";
+//    ofRectangle bounds = start_game_f.getStringBoundingBox(scaleA, 40, 40);
+//
+//    ofTranslate(400 + bounds.width/2, 300 + bounds.height / 2, 0);
+//    ofScale(2.0 + cos(ofGetElapsedTimef()), 2.0 + cos(ofGetElapsedTimef()), 1.0);
+//
+//    start_game_f.drawString(scaleA, -bounds.width/2, bounds.height/2 );
+//    ofPopMatrix();
+//
+    
 }
 
 //--------------------------------------------------------------
@@ -79,5 +138,14 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 //------------------------------------------------------
 void ofApp::setUpinitialScreen() {
+    
+    
+}
+
+//-------------------------------------------------------------
+
+void ofApp::drawGameScreen() {
+    grid.draw(300,300);
+    
     
 }

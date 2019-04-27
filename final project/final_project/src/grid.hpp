@@ -10,22 +10,48 @@
 
 #include <stdio.h>
 #include "player_.hpp"
+#include "player_.hpp"
 
 struct grid {
-//Character types of the current 
-char chartype;
+    grid();
+    grid(float, float);
+    void drawGrid();
+    void updateGrid(int);
+    bool checkIfInsideGrid(int x, int y);
+    
+    // assigning values to marks
+    enum Value {
+        VAL_EMPTY = -1,
+        VAL_O = 0, //capital o, and a zero
+        VAL_X = 1
+    };
+    
+    int value;
+    
+    float x, y;
+    
+    float height;
+    
+    float width;
+    
+    //lower bound x bound of the grid
+    int lower_x_bound;
+    
+    //lower bound x bound of the grid
+    int upper_x_bound;
+    
+    //lower bound x bound of the grid
+    int lower_y_bound;
+    
+    //lower bound x bound of the grid
+    int upper_y_bound;
+    
+    //
+    
+    
+    
+    
 
-//Character type allowed in the turn.
-char chartype_allowed;
-
-//Player who is playing in the current turn.
-Player currentPlayer;
-
-//method to check if the current player inputted wrong value.
-bool checkIfPlayerInputIncorrect();
-
-//List of animation methods to be possibly used.
-bool checkIfPlayerPlayedOutOfTurn();
 
 
 };
