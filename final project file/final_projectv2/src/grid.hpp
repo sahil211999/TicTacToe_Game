@@ -46,14 +46,6 @@ struct grid {
     //lower bound x bound of the grid
     int upper_y_bound;
     
-
-    
-    
-    
-    
-
-
-
 };
 
 #endif /* grid_hpp */

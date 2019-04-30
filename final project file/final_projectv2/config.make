@@ -6,9 +6,9 @@
 ################################################################################
 # OF ROOT
 #   The location of your root openFrameworks installation
-#       (default) OF_ROOT = ../../../../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2 
+#       (default) OF_ROOT = ../../../../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release 
 ################################################################################
-# OF_ROOT = ../../../../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2/../Downloads/of_v0.10.1_osx_release 2
+# OF_ROOT = ../../../../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release/../Downloads/of_v0.10.1_osx_release
 
 ################################################################################
 # PROJECT ROOT

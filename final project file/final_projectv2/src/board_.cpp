@@ -36,6 +36,22 @@ void board::setUpBounds() {
     }
 }
 
+void board::mouseReleased(int mouse_x, int mouse_y) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (something[i][j].checkIfInsideGrid(mouse_x, mouse_y)) {
+                something[i][j].updateGrid(0);
+            }
+            if (something[i][j].checkIfInsideGrid(mouse_x, mouse_y)) {
+                something[i][j].updateGrid(1);
+            }
+        }
+        
+    }
+    
+}
+
+
 
     
 

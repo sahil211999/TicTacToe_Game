@@ -1,3 +1,10 @@
+//
+//  ofApp.hpp
+//  final_project
+//
+//  Created by sahil sashi on 4/29/19.
+//
+
 #pragma once
 
 
@@ -43,72 +50,72 @@ private:
     
     
     
-   
+    
     std::string ktext_for_start = "Start Game";
     
-
+    
     
     
 public:
-		
-        void setup();
-		void update();
-		void draw();
-        void setUpinitialScreen();
-        void keyPressed(int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void mouseEntered(int x, int y);
-		void mouseExited(int x, int y);
-		void windowResized(int w, int h);
-		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);
+    
+    void setup();
+    void update();
+    void draw();
+    void setUpinitialScreen();
+    void keyPressed(int key);
+    void keyReleased(int key);
+    void mouseMoved(int x, int y );
+    void mouseDragged(int x, int y, int button);
+    void mousePressed(int x, int y, int button);
+    void mouseReleased(int x, int y, int button);
+    void mouseEntered(int x, int y);
+    void mouseExited(int x, int y);
+    void windowResized(int w, int h);
+    void dragEvent(ofDragInfo dragInfo);
+    void gotMessage(ofMessage msg);
     
     
     //method to set up the initial screen with the start button.
-        void setUpInitialScreen();
+    void setUpInitialScreen();
     
     //method  to set up the game.
-        void setUpGame();
+    void setUpGame();
     
     //method to take the name of the players from the user.
-        void takeUserInput();
+    void takeUserInput();
     
     //method to draw the game screen.
-        void drawGameScreen();
+    void drawGameScreen();
     
-        
+    
     //font for intro screen.
-        ofTrueTypeFont game_font;
+    ofTrueTypeFont game_font;
     
     //music  to be played in background on intro screen.
-        ofSoundPlayer intro_sequence;
+    ofSoundPlayer intro_sequence;
     
     //ofxButton startButton;
-        ofTrueTypeFont start_game_f;
+    ofTrueTypeFont start_game_f;
     
     //image for the grid.
-        ofImage grid;
+    ofImage grid;
     
     //image for the X.
-        ofImage image_for_x;
+    ofImage image_for_x;
     
     //image for the O.
-        ofImage image_for_y;
+    ofImage image_for_y;
     
     
     
-        ofRectangle first_bar;
-        int width = 5;
-        int length = 20;
-    
-        
+    ofRectangle first_bar;
+    int width = 5;
+    int length = 20;
     
     
     
     
-		
+    
+    
+    
 };

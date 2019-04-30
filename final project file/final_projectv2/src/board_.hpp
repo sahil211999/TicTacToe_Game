@@ -16,6 +16,7 @@
 class board {
     
  //default constructor
+public:
     board();
    
     //vector to store the from the board
@@ -39,12 +40,8 @@ class board {
     //constant for the co-ordinate system on the board
     float kBOARD_ZERO_Y = 220;
     
-    
-    
-    
-    
-    
-    
+    //method to update field of the value
+    void mouseReleased(int mouse_x, int mouse_y);
 };
 
 

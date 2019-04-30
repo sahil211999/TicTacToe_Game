@@ -24,14 +24,12 @@ void grid::updateGrid(int c) {
 }
 
 bool grid::checkIfInsideGrid(int x, int y) {
-    if (x > upper_x_bound & x < lower_x_bound) {
+    if (x > upper_x_bound & x < lower_x_bound || y > upper_y_bound & y < lower_y_bound) {
         return false;
     }
-    if (y > upper_y_bound & y < lower_y_bound) {
-        return false;
-    }
+    
     return true;
-
+    
 }
 
 

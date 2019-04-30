@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 class Player {
-    
+public:
     Player();
     
     public:
