@@ -72,7 +72,13 @@ void ofApp::setup() {
     
     image_for_x.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/OforTicTacToe.png");
     
+    
+    
+    gui.setup();
+    gui.add(volume.setup("Volume", 1.0, 0.0, 1.0));
     intro_sequence.play();
+
+
 
 }
 
@@ -97,23 +103,6 @@ void ofApp::update(){
         
         
         gameBoard.stringCreation();
-        
-//        cout<<gameBoard.values_on_board_as_str<<endl;
-//        cout<<"valurs of the string on board";
-//        for (int i = 0; i < 9; i++)  {
-//
-//            cout<<gameBoard.values_on_board_as_str[i];
-//        }
-//         cout << endl;
-//        cout<<"values of grid";
-//        for (int i = 0; i < 3; i++)  {
-//            for (int j = 0; j < 3; j++) {
-//
-//                cout<<gameBoard.something[i][j].value;
-//            }
-    //    }
-        
-        
         cout << endl;
         
         
@@ -163,8 +152,12 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    gui.draw();
+    intro_sequence.setVolume(volume);
+    
     if (currentState == ENTRY_SCREEN) {
         setUpInitialScreen();
+       
         
     }
     if (currentState == GAME_ON) {
@@ -189,6 +182,10 @@ void ofApp::draw(){
         
         box2d.drawGround();
         drawGameScreen();
+        
+        ofDrawBitmapString("Player1 :" + first_player_Name, 10, 30);
+        ofDrawBitmapString("Player2 :" + second_player_name, 900, 30);
+        
         
         
         
@@ -291,6 +288,7 @@ void ofApp::draw(){
                         image_for_x.draw(605, 480);
                      
                     }
+                   
                     
                     
                 }

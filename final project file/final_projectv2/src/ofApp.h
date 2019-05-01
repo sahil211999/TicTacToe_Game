@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "player_.hpp"
 #include "ofxBox2d.h"
+#include "ofxGui.h"
 
 
 class ofApp : public ofBaseApp{
@@ -131,6 +132,10 @@ public:
     ofRectangle first_bar;
     int width = 5;
     int length = 20;
+    
+    
+    ofxPanel gui;
+    ofxFloatSlider volume;
     
     
     
