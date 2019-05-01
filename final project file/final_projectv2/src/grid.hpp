@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "player_.hpp"
 #include "player_.hpp"
+#include "ofApp.h"
 
 struct grid {
     grid();
@@ -26,7 +27,7 @@ struct grid {
         VAL_X = 1
     };
     
-    int value;
+    int value = -1;
     
     float x, y;
     
@@ -45,6 +46,15 @@ struct grid {
     
     //lower bound x bound of the grid
     int upper_y_bound;
+    
+    //method to draw the X's and O's as the player clicks on the grid
+    char drawField();
+    
+    //tile to store the value in.
+    ofRectangle tile;
+    
+    
+    
     
 };
 

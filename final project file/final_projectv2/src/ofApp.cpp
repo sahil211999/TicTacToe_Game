@@ -8,14 +8,38 @@
 
 board gameBoard;
 
-Player player1;
+Player player_one;
+
+Player player_two;
+
+
+Player current_player = player_one;
+
+
 
 bool take_user_input = false;
 
 
 
-void ofApp::setup(){
-    grid.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/image_for_tic_tac.png");
+
+
+void ofApp::setup() {
+    
+    gameBoard.drawGrids();
+    
+    gameBoard.createRectangles();
+    
+    gameBoard.setUpBounds();
+    
+    player_one.serial = 1;
+    
+    player_one.serial = 2;
+    
+    grid.load("/Users/sahil_21/Desktop/image_with_transparent.png");
+    
+    image_for_x.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/OforTicTacToe.png");
+    
+    image_for_O.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/XforTicTacToe.png");
     
     
     
@@ -27,13 +51,18 @@ void ofApp::setup(){
     
     start_game.set(400, 400, 200, 100);
     
-   // grid.load("/Users/sahil_21/Desktop/image_for_tic_tac.png");
+   
     
     intro_sequence.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/Zombie_Nation_Kernkraft_400-[AudioTrimmer.com].mp3");
     
     intro_sequence.setVolume(0.5);
     
-    intro_sequence.play();
+    
+    image_for_O.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/XforTicTacToe.png");
+    
+    image_for_x.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/OforTicTacToe.png");
+    
+   // intro_sequence.play();
 
 }
 
@@ -47,10 +76,112 @@ void ofApp::draw(){
     
     if (currentState == ENTRY_SCREEN) {
         setUpInitialScreen();
+        
     }
     if (currentState == GAME_ON) {
         drawGameScreen();
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (gameBoard.something[i][j].value == 0) {
+                    if (i == 0 & j == 0) {
+                        image_for_O.draw(357, 256);
+                        break;
+                    }
+                    if (i == 0 & j == 1) {
+                        image_for_O.draw(503, 266);
+                        break;
+                    }
+                    if (i == 0 & j == 2) {
+                        image_for_O.draw(632, 270);
+                        break;
+                    }
+                    if (i == 1 & j == 0) {
+                        image_for_O.draw(366, 391);
+                        break;
+                    }
+                    if (i == 1 & j == 1) {
+                        image_for_O.draw(502, 394);
+                        break;
+                    }
+                    if (i == 1 & j == 2) {
+                        image_for_O.draw(641, 391);
+                        break;
+                    }
+                    if (i == 2 & j == 0) {
+                        image_for_O.draw(353, 541);
+                        break;
+                    }
+                    if (i == 2 & j == 1) {
+                        image_for_O.draw(502, 527);
+                        break;
+                    }
+                    if (i == 2 & j == 2) {
+                        image_for_O.draw(640, 520);
+                        break;
+                    }
+                    
+                }
+                if (gameBoard.something[i][j].value == 1) {
+                    std::cout<<"drawing image"<<endl;
+                    count_for_num_of_draws++;
+                    std::cout<<count_for_num_of_draws<<endl;
+                    if (i == 0 & j == 0) {
+                        std::cout<<"drawing image first grid"<<endl;
+                        image_for_x.draw(357, 256);
+                        
+                    }
+                    if (i == 0 & j == 1) {
+                        std::cout<<"drawing image second grid"<<endl;
+                        image_for_x.draw(503, 266);
+                     
+                    }
+                    if (i == 0 & j == 2) {
+                        std::cout<<"drawing image third grid"<<endl;
+                        image_for_x.draw(632, 270);
+                        
+                    }
+                    if (i == 1 & j == 0) {
+                        std::cout<<"drawing image fourth grid"<<endl;
+                        image_for_x.draw(366, 391);
+                     
+                    }
+                    if (i == 1 & j == 1) {
+                        std::cout<<"drawing image fifth grid"<<endl;
+                        image_for_x.draw(502, 394);
+                      
+                    }
+                    if (i == 1 & j == 2) {
+                        std::cout<<"drawing image sixth grid"<<endl;
+                        image_for_x.draw(641, 391);
+                       
+                    }
+                    if (i == 2 & j == 0) {
+                        std::cout<<"drawing image seventh grid"<<endl;
+                        image_for_x.draw(353, 541);
+                      
+                    }
+                    if (i == 2 & j == 1) {
+                        std::cout<<"drawing image eigth grid"<<endl;
+                        image_for_x.draw(502, 527);
+                        
+                    }
+                    if (i == 2 & j == 2) {
+                        std::cout<<"drawing image ninth grid"<<endl;
+                        image_for_x.draw(640, 520);
+                     
+                    }
+                    
+                    
+                }
+            }
+        }
+        
+        
     }
+//    m++;
+    
+    
     
 
 }
@@ -77,18 +208,35 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
     if (currentState == ENTRY_SCREEN) {
         if (start_game.inside(x, y)) {
             currentState = GAME_ON;
         }
     }
+    if (currentState == GAME_ON) {
+        
+//        if (m % 2 == 0) {
+//            current_player = player_one;
+//        } else {
+//            current_player = player_two;
+ //       }
+        
+        gameBoard.mouseReleased(x, y);
+        
+        
+        
+        
+        
+    }
 
 }
+
+//--------------------------------------------------------------
+void ofApp::mouseReleased(int x, int y, int button) {
+    
+}
+
+
 
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
@@ -141,15 +289,81 @@ void ofApp::setUpInitialScreen() {
 void ofApp::drawGameScreen() {
     
     
+   
+    grid.draw(180, 100);
+    gameBoard.drawGrids();
+    
+    ofDrawBitmapString(ofGetMouseX(), 10, 10);
+    ofDrawBitmapString(ofGetMouseY(), 20, 20);
+    
     if (!take_user_input) {
         first_player_Name = ofSystemTextBoxDialog("Enter the name of the first player", "  ");
         second_player_name = ofSystemTextBoxDialog("Enter the name of the second player", "  ");
         take_user_input = true;
     }
+
+}
+
+//---------------------------------------------------------------
+
+
+void board::createRectangles() {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            std::cout<<"creating rectangles"<<endl;
+            
+            if (i == 0 & j == 0) {
+                
+                something[i][j].tile.set(367, 266, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 0 & j == 1) {
+                something[i][j].tile.set(513, 276, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 0 & j == 2) {
+                something[i][j].tile.set(642, 280, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 1 & j == 0) {
+                something[i][j].tile.set(376, 401, something[i][j].width, something[i][j].height);
+               
+            }
+            if (i == 1 & j == 1) {
+                something[i][j].tile.set(512, 404, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 1 & j == 2) {
+                something[i][j].tile.set(651, 401, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 2 & j == 0) {
+                something[i][j].tile.set(363, 551, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 2 & j == 1) {
+                something[i][j].tile.set(512, 537, something[i][j].width, something[i][j].height);
+                
+            }
+            if (i == 2 & j == 2) {
+                something[i][j].tile.set(650, 530, something[i][j].width, something[i][j].height);
+               
+            }
+            
+        }
+    }
     
-    grid.draw(300,300);
-    gameBoard.drawGrids();
+}
+
+
+
+
     
+
+    
+        
+        
+
     
  
     
@@ -157,5 +371,5 @@ void ofApp::drawGameScreen() {
     
     
     
-}
+
 

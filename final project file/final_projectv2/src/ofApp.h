@@ -64,7 +64,10 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
-    void switchTurns();
+    
+    //method to draw the X's and O's on screen.
+    void drawXandO();
+    
     
     
     //method to set up the initial screen with the start button.
@@ -78,7 +81,6 @@ public:
     
     //method to draw the game screen.
     void drawGameScreen();
-    
     
     //font for intro screen.
     ofTrueTypeFont game_font;
@@ -96,10 +98,19 @@ public:
     ofImage image_for_x;
     
     //image for the O.
-    ofImage image_for_y;
+    ofImage image_for_O;
     
     //to determine the current state of the game
     GameState currentState = ENTRY_SCREEN;
+    
+    //counter to switch turns
+    int m = - 1;
+    
+    void createRectangles();
+    
+    int count_for_num_of_draws;
+    
+    
     
     
     

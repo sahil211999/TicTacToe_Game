@@ -9,6 +9,8 @@
 #define board__hpp
 #include "grid.hpp"
 
+#include "player_.hpp"
+
 
 #include <stdio.h>
 #include <vector>
@@ -29,19 +31,25 @@ public:
     void drawGrids();
     
    //constant board width
-    float kBOARD_WIDTH = 610;
+    float kBOARD_WIDTH = 443;
     
     //constant board height
-    float kBOARD_HEIGHT = 248;
+    float kBOARD_HEIGHT = 440;
     
     //constant for the co-ordinate system on the board
-    float kBOARD_ZERO_x = 220;
+    float kBOARD_ZERO_x = 300;
     
     //constant for the co-ordinate system on the board
-    float kBOARD_ZERO_Y = 220;
+    float kBOARD_ZERO_Y = 200;
     
     //method to update field of the value
     void mouseReleased(int mouse_x, int mouse_y);
+    
+    
+    //method to create grids
+    void createRectangles();
+    
+    int k = 0;
 };
 
 
