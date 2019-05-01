@@ -128,47 +128,47 @@ void ofApp::draw(){
                     std::cout<<count_for_num_of_draws<<endl;
                     if (i == 0 & j == 0) {
                         std::cout<<"drawing image first grid"<<endl;
-                        image_for_x.draw(357, 256);
+                        image_for_x.draw(347, 246);
                         
                     }
                     if (i == 0 & j == 1) {
                         std::cout<<"drawing image second grid"<<endl;
-                        image_for_x.draw(503, 266);
+                        image_for_x.draw(470, 256);
                      
                     }
                     if (i == 0 & j == 2) {
                         std::cout<<"drawing image third grid"<<endl;
-                        image_for_x.draw(632, 270);
+                        image_for_x.draw(605, 256);
                         
                     }
                     if (i == 1 & j == 0) {
                         std::cout<<"drawing image fourth grid"<<endl;
-                        image_for_x.draw(366, 391);
+                        image_for_x.draw(350, 375);
                      
                     }
                     if (i == 1 & j == 1) {
                         std::cout<<"drawing image fifth grid"<<endl;
-                        image_for_x.draw(502, 394);
+                        image_for_x.draw(470, 370);
                       
                     }
                     if (i == 1 & j == 2) {
                         std::cout<<"drawing image sixth grid"<<endl;
-                        image_for_x.draw(641, 391);
+                        image_for_x.draw(605, 375);
                        
                     }
                     if (i == 2 & j == 0) {
                         std::cout<<"drawing image seventh grid"<<endl;
-                        image_for_x.draw(353, 541);
+                        image_for_x.draw(343, 480);
                       
                     }
                     if (i == 2 & j == 1) {
                         std::cout<<"drawing image eigth grid"<<endl;
-                        image_for_x.draw(502, 527);
+                        image_for_x.draw(470, 480);
                         
                     }
                     if (i == 2 & j == 2) {
                         std::cout<<"drawing image ninth grid"<<endl;
-                        image_for_x.draw(640, 520);
+                        image_for_x.draw(605, 480);
                      
                     }
                     
@@ -214,19 +214,12 @@ void ofApp::mousePressed(int x, int y, int button){
         }
     }
     if (currentState == GAME_ON) {
-        
 //        if (m % 2 == 0) {
 //            current_player = player_one;
 //        } else {
 //            current_player = player_two;
- //       }
-        
+//       }
         gameBoard.mouseReleased(x, y);
-        
-        
-        
-        
-        
     }
 
 }
@@ -314,39 +307,39 @@ void board::createRectangles() {
             
             if (i == 0 & j == 0) {
                 
-                something[i][j].tile.set(367, 266, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(357, 256, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 0 & j == 1) {
-                something[i][j].tile.set(513, 276, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(503, 266, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 0 & j == 2) {
-                something[i][j].tile.set(642, 280, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(632, 270, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 1 & j == 0) {
-                something[i][j].tile.set(376, 401, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(366, 391, something[i][j].width, something[i][j].height);
                
             }
             if (i == 1 & j == 1) {
-                something[i][j].tile.set(512, 404, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(502, 394, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 1 & j == 2) {
-                something[i][j].tile.set(651, 401, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(641, 391, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 2 & j == 0) {
-                something[i][j].tile.set(363, 551, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(353, 541, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 2 & j == 1) {
-                something[i][j].tile.set(512, 537, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(502, 527, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 2 & j == 2) {
-                something[i][j].tile.set(650, 530, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(640, 520, something[i][j].width, something[i][j].height);
                
             }
             
