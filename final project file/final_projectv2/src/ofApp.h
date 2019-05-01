@@ -110,6 +110,14 @@ public:
     
     int count_for_num_of_draws;
     
+    bool start_game_pressed = false;
+    
+    ofMessage winning_message();
+    
+    bool did_player_win;
+    
+    bool player_won;
+    
     
     
     

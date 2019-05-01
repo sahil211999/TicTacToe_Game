@@ -43,11 +43,28 @@ public:
     float kBOARD_ZERO_Y = 200;
     
     //method to update field of the value
-    void mouseReleased(int mouse_x, int mouse_y);
+   void mouseReleased(int mouse_x, int mouse_y, Player currentplayer);
     
     
     //method to create grids
     void createRectangles();
+    
+    //method to check for horizontal winners.
+    bool checkForHorizontalWinner(char ch, string input_string);
+    
+    //method to check for vertical winners.
+    bool checkForVerticalWinner(char ch, string input_string);
+    
+    //method to check for diagonal winners.
+    bool checkForDiagonalWinner(char ch, string input_string);
+    
+    //method create string reading the board
+    void stringCreation();
+    
+    //string converted from the values in each grid
+    string values_on_board_as_str;
+    
+    
     
     int k = 0;
 };

@@ -272,6 +272,7 @@
 		5B31E722227757A300A116CE /* board_.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = board_.cpp; sourceTree = "<group>"; };
 		5B31E723227757A500A116CE /* compute_the_winner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = compute_the_winner.cpp; sourceTree = "<group>"; };
 		5B31E724227757A700A116CE /* board_.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = board_.hpp; sourceTree = "<group>"; };
+		5B31E727227A150800A116CE /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 		5C12458325783FAC116B4058 /* ofxCvGrayscaleImage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxCvGrayscaleImage.cpp; path = ../../../../Downloads/of_v0.10.1_osx_release/addons/ofxOpenCv/src/ofxCvGrayscaleImage.cpp; sourceTree = SOURCE_ROOT; };
 		5C403E99CD4D51FCA76D3513 /* motion_stabilizing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = motion_stabilizing.hpp; path = ../../../../Downloads/of_v0.10.1_osx_release/addons/ofxOpenCv/libs/opencv/include/opencv2/videostab/motion_stabilizing.hpp; sourceTree = SOURCE_ROOT; };
 		5C8E644D69A23ECA5F472E26 /* b2WeldJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = b2WeldJoint.cpp; path = ../../../../Downloads/of_v0.10.1_osx_release/addons/ofxBox2d/libs/Box2D/Dynamics/Joints/b2WeldJoint.cpp; sourceTree = SOURCE_ROOT; };
@@ -1177,6 +1178,13 @@
 			name = detail;
 			sourceTree = "<group>";
 		};
+		5B31E728227A151500A116CE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		5F73569ECAB65FF89185C254 /* Collision */ = {
 			isa = PBXGroup;
 			children = (
@@ -1995,6 +2003,7 @@
 			children = (
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				5B31E728227A151500A116CE /* Tests */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E42962AA2163EDD300A6A9E2 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
@@ -2006,6 +2015,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5B31E727227A150800A116CE /* catch.hpp */,
 				5B31E722227757A300A116CE /* board_.cpp */,
 				5B31E724227757A700A116CE /* board_.hpp */,
 				5B31E723227757A500A116CE /* compute_the_winner.cpp */,

@@ -62,13 +62,91 @@ void ofApp::setup() {
     
     image_for_x.load("/Users/sahil_21/Documents/final-project-sahil211999/final project file/final_projectv2/bin/data/OforTicTacToe.png");
     
-   // intro_sequence.play();
+    intro_sequence.play();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    if (start_pressed == true) {
+        currentState = GAME_ON;
+    }
+    if (currentState == GAME_ON) {
+        
+        if (player_won == true) {
+            did_player_win = false;
+        }
+        
+        if (did_player_win == true) {
+            player_won = true;
+            ofSystemAlertDialog("winner is here");
+            
+        }
+        
+        
+        
+        gameBoard.stringCreation();
+        
+//        cout<<gameBoard.values_on_board_as_str<<endl;
+//        cout<<"valurs of the string on board";
+//        for (int i = 0; i < 9; i++)  {
+//
+//            cout<<gameBoard.values_on_board_as_str[i];
+//        }
+//         cout << endl;
+//        cout<<"values of grid";
+//        for (int i = 0; i < 3; i++)  {
+//            for (int j = 0; j < 3; j++) {
+//
+//                cout<<gameBoard.something[i][j].value;
+//            }
+    //    }
+        
+        
+        cout << endl;
+        
+        
+        if (gameBoard.checkForDiagonalWinner('X', gameBoard.values_on_board_as_str)) {
+            cout<<"WINNNERRRRR for diag X"<<endl;
+            did_player_win = true;
+            ofColor(23,34,56);
+            did_player_win = true;
+        }
+        if (gameBoard.checkForDiagonalWinner('O', gameBoard.values_on_board_as_str)) {
+           ofColor(23,34,56);
+            did_player_win = true;
+           
+            cout<<"WINNNERRRRR for diag O"<<endl;
+        }
+        if (gameBoard.checkForHorizontalWinner('O', gameBoard.values_on_board_as_str)) {
+            ofColor(23,34,56);
+            did_player_win = true;
+            
+            cout<<"WINNNERRRRR for hori O"<<endl;
+        }
+        if (gameBoard.checkForHorizontalWinner('X', gameBoard.values_on_board_as_str)) {
+            ofColor(23,34,56);
+            did_player_win = true;
+           
+            cout<<"WINNNERRRRR for hori X"<<endl;
+        }
 
+        if (gameBoard.checkForVerticalWinner('O', gameBoard.values_on_board_as_str)) {
+            ofColor(23,34,56);
+            did_player_win = true;
+           
+            cout<<"WINNNERRRRR for verti O"<<endl;
+        }
+        if (gameBoard.checkForVerticalWinner('X', gameBoard.values_on_board_as_str)) {
+            ofColor(23,34,56);
+            did_player_win = true;
+            
+            cout<<"WINNNERRRRR for verti X"<<endl;
+        }
+        
+        
+    }
+    
 }
 
 //--------------------------------------------------------------
@@ -85,89 +163,98 @@ void ofApp::draw(){
             for (int j = 0; j < 3; j++) {
                 if (gameBoard.something[i][j].value == 0) {
                     if (i == 0 & j == 0) {
-                        image_for_O.draw(357, 256);
-                        break;
+                        //std::cout<<"drawing image first grid circle"<<endl;
+                        image_for_O.draw(347, 246);
+                        
                     }
                     if (i == 0 & j == 1) {
-                        image_for_O.draw(503, 266);
-                        break;
+                        //std::cout<<"drawing image second grid circle"<<endl;
+                        image_for_O.draw(470, 256);
+                        
                     }
                     if (i == 0 & j == 2) {
-                        image_for_O.draw(632, 270);
-                        break;
+                        //std::cout<<"drawing image third grid circle"<<endl;
+                        image_for_O.draw(605, 256);
+                        
                     }
                     if (i == 1 & j == 0) {
-                        image_for_O.draw(366, 391);
-                        break;
+                       // std::cout<<"drawing image fourth grid circle"<<endl;
+                        image_for_O.draw(350, 375);
+                        
                     }
                     if (i == 1 & j == 1) {
-                        image_for_O.draw(502, 394);
-                        break;
+                       // std::cout<<"drawing image fifth grid circle"<<endl;
+                        image_for_O.draw(470, 370);
+                        
                     }
                     if (i == 1 & j == 2) {
-                        image_for_O.draw(641, 391);
-                        break;
+                       // std::cout<<"drawing image sixth grid circle"<<endl;
+                        image_for_O.draw(605, 375);
+                        
                     }
                     if (i == 2 & j == 0) {
-                        image_for_O.draw(353, 541);
-                        break;
+                       // std::cout<<"drawing image seventh grid circle"<<endl;
+                        image_for_O.draw(343, 480);
+                        
                     }
                     if (i == 2 & j == 1) {
-                        image_for_O.draw(502, 527);
-                        break;
+                       // std::cout<<"drawing image eigth grid circle"<<endl;
+                        image_for_O.draw(470, 480);
+                        
                     }
                     if (i == 2 & j == 2) {
-                        image_for_O.draw(640, 520);
-                        break;
+                      //  std::cout<<"drawing image ninth grid circle"<<endl;
+                        image_for_O.draw(605, 480);
+                        
                     }
                     
                 }
                 if (gameBoard.something[i][j].value == 1) {
-                    std::cout<<"drawing image"<<endl;
+                   // std::cout<<"drawing image"<<endl;
                     count_for_num_of_draws++;
-                    std::cout<<count_for_num_of_draws<<endl;
+                    //std::cout<<count_for_num_of_draws<<endl;
                     if (i == 0 & j == 0) {
-                        std::cout<<"drawing image first grid"<<endl;
+                       // std::cout<<"drawing image first grid"<<endl;
                         image_for_x.draw(347, 246);
                         
                     }
                     if (i == 0 & j == 1) {
-                        std::cout<<"drawing image second grid"<<endl;
+                       // std::cout<<"drawing image second grid"<<endl;
                         image_for_x.draw(470, 256);
                      
                     }
                     if (i == 0 & j == 2) {
-                        std::cout<<"drawing image third grid"<<endl;
+                       // std::cout<<"drawing image third grid"<<endl;
                         image_for_x.draw(605, 256);
                         
                     }
                     if (i == 1 & j == 0) {
-                        std::cout<<"drawing image fourth grid"<<endl;
+                       // std::cout<<"drawing image fourth grid"<<endl;
                         image_for_x.draw(350, 375);
                      
                     }
                     if (i == 1 & j == 1) {
-                        std::cout<<"drawing image fifth grid"<<endl;
+                       // std::cout<<"drawing image fifth grid"<<endl;
                         image_for_x.draw(470, 370);
                       
                     }
                     if (i == 1 & j == 2) {
-                        std::cout<<"drawing image sixth grid"<<endl;
+                       // std::cout<<"drawing image sixth grid"<<endl;
                         image_for_x.draw(605, 375);
                        
                     }
                     if (i == 2 & j == 0) {
-                        std::cout<<"drawing image seventh grid"<<endl;
+                        //std::cout<<"drawing image seventh grid"<<endl;
                         image_for_x.draw(343, 480);
                       
                     }
                     if (i == 2 & j == 1) {
-                        std::cout<<"drawing image eigth grid"<<endl;
+                       // std::cout<<"drawing image eigth grid"<<endl;
                         image_for_x.draw(470, 480);
                         
                     }
                     if (i == 2 & j == 2) {
-                        std::cout<<"drawing image ninth grid"<<endl;
+                       // std::cout<<"drawing image ninth grid"<<endl;
                         image_for_x.draw(605, 480);
                      
                     }
@@ -208,24 +295,35 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    if (currentState == ENTRY_SCREEN) {
-        if (start_game.inside(x, y)) {
-            currentState = GAME_ON;
-        }
-    }
-    if (currentState == GAME_ON) {
-//        if (m % 2 == 0) {
-//            current_player = player_one;
-//        } else {
-//            current_player = player_two;
-//       }
-        gameBoard.mouseReleased(x, y);
-    }
+    
+    
 
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button) {
+    std::cout<<"This is to check player change"<<endl;
+    std::cout<<m<<endl;
+    if (currentState == ENTRY_SCREEN) {
+        if (start_game.inside(x, y)) {
+            //currentState = GAME_ON;
+            start_pressed = true;
+        }
+    }
+    if (currentState == GAME_ON) {
+        std::cout<<"This is check change "<<endl;
+        
+        
+        if (m % 2 == 0) {
+            current_player = player_one;
+        } else {
+            current_player = player_two;
+        }
+        //cout<<"This is the serial num of the player ";
+       // cout<<current_player.serial<<endl;
+        gameBoard.mouseReleased(x, y, current_player);
+    }
+    m++;
     
 }
 
@@ -266,7 +364,7 @@ void ofApp::setUpInitialScreen() {
     ofPushMatrix();
     
     ofSetColor(158, 253, 159);
-    string scaleA = "TIC TAC TOE";
+    string scaleA = "TIC TAC HOE";
     ofRectangle bounds = start_game_f.getStringBoundingBox(scaleA, 40, 40);
     
     ofTranslate(400 + bounds.width/2, 300 + bounds.height / 2, 0);
@@ -306,40 +404,36 @@ void board::createRectangles() {
             std::cout<<"creating rectangles"<<endl;
             
             if (i == 0 & j == 0) {
-                
-                something[i][j].tile.set(357, 256, something[i][j].width, something[i][j].height);
-                
+                something[i][j].tile.set(347, 246, something[i][j].width, something[i][j].height);
             }
             if (i == 0 & j == 1) {
-                something[i][j].tile.set(503, 266, something[i][j].width, something[i][j].height);
-                
+                something[i][j].tile.set(470, 256, something[i][j].width, something[i][j].height);
             }
             if (i == 0 & j == 2) {
-                something[i][j].tile.set(632, 270, something[i][j].width, something[i][j].height);
-                
+                something[i][j].tile.set(605, 256, something[i][j].width, something[i][j].height);
             }
             if (i == 1 & j == 0) {
-                something[i][j].tile.set(366, 391, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(350, 375, something[i][j].width, something[i][j].height);
                
             }
             if (i == 1 & j == 1) {
-                something[i][j].tile.set(502, 394, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(470, 370, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 1 & j == 2) {
-                something[i][j].tile.set(641, 391, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(605, 375, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 2 & j == 0) {
-                something[i][j].tile.set(353, 541, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(343, 480, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 2 & j == 1) {
-                something[i][j].tile.set(502, 527, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(470, 480, something[i][j].width, something[i][j].height);
                 
             }
             if (i == 2 & j == 2) {
-                something[i][j].tile.set(640, 520, something[i][j].width, something[i][j].height);
+                something[i][j].tile.set(605, 480, something[i][j].width, something[i][j].height);
                
             }
             
