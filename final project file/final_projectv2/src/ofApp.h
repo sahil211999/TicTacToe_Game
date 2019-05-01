@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "player_.hpp"
+#include "ofxBox2d.h"
+
 
 class ofApp : public ofBaseApp{
 
@@ -117,6 +119,10 @@ public:
     bool did_player_win;
     
     bool player_won;
+    
+    ofxBox2d                               box2d;   // the box2d world
+    vector   <shared_ptr<ofxBox2dCircle> > circles; // default box2d circles
+    vector   <shared_ptr<ofxBox2dRect> >   boxes;   // defalut box2d rects
     
     
     

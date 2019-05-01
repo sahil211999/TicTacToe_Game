@@ -25,6 +25,16 @@ bool take_user_input = false;
 
 void ofApp::setup() {
     
+    ofSetVerticalSync(true);
+    ofBackgroundHex(0xfdefc2);
+    ofSetLogLevel(OF_LOG_NOTICE);
+    
+    box2d.init();
+    box2d.setGravity(0, 10);//change made
+    box2d.createBounds();
+    box2d.setFPS(60.0);
+    box2d.registerGrabbing();
+    
     gameBoard.drawGrids();
     
     gameBoard.createRectangles();
@@ -72,6 +82,7 @@ void ofApp::update(){
         currentState = GAME_ON;
     }
     if (currentState == GAME_ON) {
+        box2d.update();
         
         if (player_won == true) {
             did_player_win = false;
@@ -157,7 +168,29 @@ void ofApp::draw(){
         
     }
     if (currentState == GAME_ON) {
+        
+        
+        
+        for(int i= 0; i<circles.size(); i++) {
+            ofFill();
+            ofSetHexColor(0xf6c738);
+            if (i % 3 == 0) {
+                circles[i].get()->draw();
+            }
+        }
+        for(int i=0; i<boxes.size(); i++) {
+            ofFill();
+            ofSetHexColor(0xBF2545);
+            if (i % 3 == 0) {
+                boxes[i].get()->draw();
+            }
+        }
+        
+        
+        box2d.drawGround();
         drawGameScreen();
+        
+        
         
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -285,6 +318,23 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
+    if  (currentState == GAME_ON) {
+        
+        if (current_player.serial == 0) {
+            float r = ofRandom(4, 20);
+            circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
+            circles.back().get()->setPhysics(1.0, 0.43, 0.1);// change made in this
+            circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+        }
+        
+        if (current_player.serial == 2) {
+            float w = ofRandom(4, 20);
+                    float h = ofRandom(4, 20);
+                    boxes.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
+                    boxes.back().get()->setPhysics(3.0, 0.53, 0.1);
+                    boxes.back().get()->setup(box2d.getWorld(), mouseX, mouseY, w, h);
+        }
+    }
 
 }
 
