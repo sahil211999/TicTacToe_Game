@@ -22,7 +22,7 @@ public:
     board();
    
     //vector to store the from the board
-    std::vector<std::vector<grid>> something;
+    std::vector<std::vector<grid>> board_matrix;
     
     //method to set up the bounds of each grid.
     void setUpBounds();
@@ -45,6 +45,8 @@ public:
     //method to update field of the value
    void mouseReleased(int mouse_x, int mouse_y, Player currentplayer);
     
+    //number of rows and columns
+    int number_of_rows_colums;
     
     //method to create grids
     void createRectangles();

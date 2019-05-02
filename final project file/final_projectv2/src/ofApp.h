@@ -13,20 +13,13 @@ private:
         
         ENTRY_SCREEN = 0,
         GAME_ON,
-        RESET_GRID,
-        GAME_END,
-        HOLD_GAME,
     };
-    
-    //vector to store the values from the grid
-    //vector<grid> tic_tac_toe_grid();
-    
     
     //buttons for entry screen
     ofRectangle start_game;
-    float BUTTON_WIDTH = 10;
-    float BUTTON_LENGTH = 20;
-    bool start_pressed;
+    float BUTTON_LENGTH_START = 200;
+    bool start_pressed = false;
+    
     
     
     
@@ -35,17 +28,9 @@ private:
     //taking input from the user for names of the players
     std::string first_player_Name;
     std::string second_player_name;
+
     
-    
-    //SOUND files
-    std::string ksound_played_when_player_plays = "/Users/sahil_21/Desktop/battle_theme.mp3";
-    std::string kwinning_music = "/Users/sahil_21/Desktop/battle_winner.mp3";
-    std::string kmusic_when_draw = "/Users/sahil_21/Desktop/In_game_theme.mp3";
-    
-    
-    
-    
-    std::string ktext_for_start = "Start Game";
+    std::string ktext_for_start = "START GAME";
     
     
     
@@ -70,8 +55,6 @@ public:
     
     //method to draw the X's and O's on screen.
     void drawXandO();
-    
-    
     
     //method to set up the initial screen with the start button.
     void setUpInitialScreen();
@@ -109,33 +92,35 @@ public:
     //counter to switch turns
     int m = - 1;
     
+    //method to create rectangles to store the  values.
     void createRectangles();
     
-    int count_for_num_of_draws;
-    
+    //boolean  to trigger when button is clicked.
     bool start_game_pressed = false;
     
-    ofMessage winning_message();
-    
+    //boolean to trigger when a player wins.
     bool did_player_win;
     
+    //boolean to trigger when a player has won and message has been displayed.
     bool player_won;
     
     ofxBox2d                               box2d;   // the box2d world
     vector   <shared_ptr<ofxBox2dCircle> > circles; // default box2d circles
     vector   <shared_ptr<ofxBox2dRect> >   boxes;   // defalut box2d rects
     
+    //method called to reset the board.
+    void clearBoard();
     
+    //check for winner
+    void checkForWinner();
     
-    
-    
-    ofRectangle first_bar;
-    int width = 5;
-    int length = 20;
-    
-    
+    //panel for volume rocked
     ofxPanel gui;
     ofxFloatSlider volume;
+    
+    //method draw circles and cross's.
+    void createOsandXs();
+    
     
     
     

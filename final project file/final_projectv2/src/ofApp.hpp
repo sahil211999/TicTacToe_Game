@@ -107,10 +107,9 @@ public:
     ofImage image_for_y;
     
     
+   
     
-    ofRectangle first_bar;
-    int width = 5;
-    int length = 20;
+    
     
     
     

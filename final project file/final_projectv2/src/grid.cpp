@@ -32,30 +32,6 @@ bool grid::checkIfInsideGrid(int x, int y) {
     
 }
 
-char grid::drawField() {
-    
-    float offset = 20;
-    
-    //    ofFill();
-    //    ofSetColor(200, 200, 200); //fill color gray
-//    
-//    ofNoFill(); //stroke
-//    ofSetColor(0, 0, 0);//stroke color BLACK
-//    ofSetLineWidth(2);
-    
-    
-    switch (value) {
-        case -1: //update to empty
-            // do nothing
-            break;
-        case 0: // update to O
-            return  'O';
-            break;
-        case 1: //update to X
-            return 'X';
-            break;
-    }
-}
 
 
 

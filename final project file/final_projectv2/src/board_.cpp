@@ -8,18 +8,18 @@
 #include "board_.hpp"
 
 board::board() {
-    std::vector<std::vector<grid>> temp(3, std::vector<grid> (3));
+    std::vector<std::vector<grid>> temp(number_of_rows_colums, std::vector<grid> (number_of_rows_colums));
     
-    something = temp;
+    board_matrix = temp;
 }
 
 
 
 void board::drawGrids() {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            something[i][j].width = (kBOARD_WIDTH/3 * 0.75);
-            something[i][j].height = (kBOARD_HEIGHT/3 * 0.75);
+    for (int i = 0; i < number_of_rows_colums; i++) {
+        for (int j = 0; j < number_of_rows_colums; j++) {
+            board_matrix[i][j].width = (kBOARD_WIDTH/3 * 0.75);
+            board_matrix[i][j].height = (kBOARD_HEIGHT/3 * 0.75);
         }
     }
 }
@@ -28,29 +28,29 @@ void board::drawGrids() {
 void board::setUpBounds() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            something[i][j].upper_x_bound = kBOARD_ZERO_x + (something[i][j].width * (j + 1));
-            something[i][j].upper_y_bound = kBOARD_ZERO_Y + (something[i][j].height * (i + 1));
-            something[i][j].lower_x_bound = kBOARD_ZERO_x + (something[i][j].width * j);
-            something[i][j].lower_y_bound = kBOARD_ZERO_Y + (something[i][j].height * j);
+            board_matrix[i][j].upper_x_bound = kBOARD_ZERO_x + (board_matrix[i][j].width * (j + 1));
+            board_matrix[i][j].upper_y_bound = kBOARD_ZERO_Y + (board_matrix[i][j].height * (i + 1));
+            board_matrix[i][j].lower_x_bound = kBOARD_ZERO_x + (board_matrix[i][j].width * j);
+            board_matrix[i][j].lower_y_bound = kBOARD_ZERO_Y + (board_matrix[i][j].height * j);
         }
     }
 }
 
 void board::mouseReleased(int mouse_x, int mouse_y, Player currentplayer) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-                if (something[i][j].tile.inside(mouse_x, mouse_y)) {
+    for (int i = 0; i < number_of_rows_colums; i++) {
+        for (int j = 0; j < number_of_rows_colums; j++) {
+                if (board_matrix[i][j].tile.inside(mouse_x, mouse_y)) {
                     std::cout<<"grid is updateted"<<endl;
                     k++;
                     std::cout<<"CURRENT PLAYER"<<endl;
                     std::cout<<currentplayer.serial<<endl;
                     
                     if (currentplayer.serial == 0) {
-                        something[i][j].updateGrid(0);
+                        board_matrix[i][j].updateGrid(0);
                     }
                     
                     if (currentplayer.serial == 2) {
-                        something[i][j].updateGrid(1);
+                        board_matrix[i][j].updateGrid(1);
                     }
                         
                 }
@@ -90,14 +90,14 @@ bool board::checkForDiagonalWinner(char ch, string input_string) {
 
 void board::stringCreation() {
     int o = 0;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (something[i][j].value == 1) {
+    for (int i = 0; i < number_of_rows_colums; i++) {
+        for (int j = 0; j < number_of_rows_colums; j++) {
+            if (board_matrix[i][j].value == 1) {
                 cout<<"control reached here to make it this";
                 cout<<endl;
                 values_on_board_as_str[o] = 'X';
             }
-            else if (something[i][j].value == 0) {
+            else if (board_matrix[i][j].value == 0) {
                 values_on_board_as_str[o] = 'O';
             }
             else {

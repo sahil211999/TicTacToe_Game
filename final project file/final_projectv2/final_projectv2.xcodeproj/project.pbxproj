@@ -43,7 +43,6 @@
 		5B31E71E2277518100A116CE /* grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B31E7192277517D00A116CE /* grid.cpp */; };
 		5B31E7212277518100A116CE /* player_.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B31E71D2277518100A116CE /* player_.cpp */; };
 		5B31E725227757A700A116CE /* board_.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B31E722227757A300A116CE /* board_.cpp */; };
-		5B31E726227757A700A116CE /* compute_the_winner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B31E723227757A500A116CE /* compute_the_winner.cpp */; };
 		610DA0CF5E6EB44FA67ECBBE /* b2Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9A0CFB8E9EB15DA96078DD /* b2Math.cpp */; };
 		61E5FB3F9B66FB396DD69767 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C308243BEAC33426687B1AA2 /* ofxCvImage.cpp */; };
 		657421952F1753B7A8013B2D /* b2Joint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2346CAEFC086EA208D085D97 /* b2Joint.cpp */; };
@@ -270,7 +269,6 @@
 		5B31E71B2277517F00A116CE /* player_.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player_.hpp; sourceTree = "<group>"; };
 		5B31E71D2277518100A116CE /* player_.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player_.cpp; sourceTree = "<group>"; };
 		5B31E722227757A300A116CE /* board_.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = board_.cpp; sourceTree = "<group>"; };
-		5B31E723227757A500A116CE /* compute_the_winner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = compute_the_winner.cpp; sourceTree = "<group>"; };
 		5B31E724227757A700A116CE /* board_.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = board_.hpp; sourceTree = "<group>"; };
 		5B31E727227A150800A116CE /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 		5C12458325783FAC116B4058 /* ofxCvGrayscaleImage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxCvGrayscaleImage.cpp; path = ../../../../Downloads/of_v0.10.1_osx_release/addons/ofxOpenCv/src/ofxCvGrayscaleImage.cpp; sourceTree = SOURCE_ROOT; };
@@ -2018,7 +2016,6 @@
 				5B31E727227A150800A116CE /* catch.hpp */,
 				5B31E722227757A300A116CE /* board_.cpp */,
 				5B31E724227757A700A116CE /* board_.hpp */,
-				5B31E723227757A500A116CE /* compute_the_winner.cpp */,
 				5B31E7192277517D00A116CE /* grid.cpp */,
 				5B31E7182277517B00A116CE /* grid.hpp */,
 				5B31E71D2277518100A116CE /* player_.cpp */,
@@ -2231,7 +2228,6 @@
 				87089CCD85CEA0B1424C294F /* b2FrictionJoint.cpp in Sources */,
 				2BCD13A1AAB80E0F0281D8F5 /* b2GearJoint.cpp in Sources */,
 				657421952F1753B7A8013B2D /* b2Joint.cpp in Sources */,
-				5B31E726227757A700A116CE /* compute_the_winner.cpp in Sources */,
 				44A0FCBB8A30BF77DF62BF21 /* b2MotorJoint.cpp in Sources */,
 				17634273FAC9CA0E26CAD028 /* b2MouseJoint.cpp in Sources */,
 				738698757AF65A1F2AE038A5 /* b2PrismaticJoint.cpp in Sources */,
